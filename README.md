@@ -39,10 +39,30 @@ These scripts process the TPM (Transcripts Per Million) outputs from StringTie t
   * `plot_stringtie_output.R`: Utilities for basic TPM plotting and filtering.
 * **Mixture Deconvolution**
   * `mixed_samples_analysis.R`: Calculates normalized signature scores to determine the proportional breakdown of mixed samples based on pure-tissue markers.
+  * ---
+
+## 3. Exploratory Data Analysis & Visualization (Python Scripts)
+These scripts utilize `pandas`, `seaborn`, and `umap-learn` to process the merged count matrices and generate publication-ready visualizations.
+
+* **Dimensionality Reduction**
+  * `static_umap_analysis.py`: Generates a static, labeled 2D UMAP scatter plot using seaborn.
+  * `umap_analysis.py`: Performs 3D UMAP reduction and generates an interactive HTML scatter plot using Plotly.
+* **Expression Heatmaps**
+  * `expression_heatmap_known_markers.py`: Filters unwanted genes and plots heatmaps for predefined blood/saliva markers.
+  * `expression_heatmap_pure_vs_mix_group.py`: Generates heatmaps utilizing data-driven sample groupings.
+  * `final_heatmap_script.py`: Produces dual heatmaps (top 50 pure sample genes vs. mixture sample markers).
+* **Sex Determination**
+  * `sex_analysis.py`: Analyzes the expression of the XIST lncRNA across all samples to infer biological sex.
+  * `sex_analysis_v2.py`: An updated robust version that evaluates XIST alongside a panel of Y-chromosome markers (e.g., RPS4Y1, DDX3Y).
 
 ---
 
 ## System Requirements
-* **CLI Tools:** `samtools`, `minimap2`, `stringtie`, `dorado` (v1.0.2), `FEELnc`
-* **Python (3.12+):** `NanoPlot==1.44.1`, `kaleido==0.2.1`
-* **R (4.0+):** `DESeq2`, `limma`, `pheatmap`, `ggplot2`, `dplyr`, `rtracklayer`, `uwot`, `org.Hs.eg.db`
+NanoPlot==1.44.1
+kaleido==0.2.1
+pandas
+seaborn
+matplotlib
+numpy
+umap-learn
+plotly
